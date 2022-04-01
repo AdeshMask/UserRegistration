@@ -13,6 +13,14 @@ public class MainClass {
         System.out.print("Enter First name:");
         String fname = scanner.nextLine();
         checkPatterns.check(fname);
+        System.out.print("Enter Last name:");
+        String lname = scanner.nextLine();
+        checkPatterns.check(lname);
+        System.out.print("Enter email address:");
+        String email = scanner.next();
+        checkPatterns.check(email);
+        System.out.print("Enter Mobile Number:");
+        String mobile = scanner.next();
+        checkPatterns.check(mobile);
     }
-
 }
