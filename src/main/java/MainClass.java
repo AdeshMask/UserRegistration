@@ -25,5 +25,6 @@ public class MainClass {
         System.out.println("Enter 8-digit password");
         String password = scanner.next();
         checkPatterns.passwords(password);
+        System.out.println("Registration successfull...");
     }
 }
