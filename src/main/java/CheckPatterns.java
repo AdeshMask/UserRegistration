@@ -6,7 +6,7 @@ public class CheckPatterns {
     static Pattern names = Pattern.compile("^[A-Z][a-z]{3,}$");
     static Pattern email = Pattern.compile("^abc(['.''\\-''+']?)(['a-zA-Z0-9']*)@bl.co(['.']?)([a-z]*)$");
     static Pattern number1 = Pattern.compile("^([+]\\d{2})?\\d{10}$");
-    static Pattern password = Pattern.compile("^^[a-zA-Z0-9'@''+''\\-''$''?''#''!''%''&''*']{8,}$");
+    static Pattern password = Pattern.compile("^[a-zA-Z0-9'@''+''\\-''$''?''#''!''%''&''*']{8,}$");
 
 
     public static void check(String inputs) {
