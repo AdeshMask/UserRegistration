@@ -6,7 +6,14 @@ public class CheckPatterns {
     static Pattern names = Pattern.compile("^[A-Z][a-z]{3,}$");
     static Pattern email = Pattern.compile("^abc(['.''\\-''+']?)(['a-zA-Z0-9']*)@bl.co(['.']?)([a-z]*)$");
     static Pattern number1 = Pattern.compile("^([+]\\d{2})?\\d{10}$");
-    static Pattern password = Pattern.compile("^[a-zA-Z0-9]{8,}$");
+    static Pattern password = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\\\S+$).{8,}$");
+    //For Password Validation.
+//    (?=.*[0-9]) represents a digit must occur at least once.
+//    (?=.*[a-z]) represents a lower case alphabet must occur at least once.
+//    (?=.*[A-Z]) represents an upper case alphabet that must occur at least once.
+//    (?=.*[@#$%^&-+=()] represents a special character that must occur at least once.
+//    (?=\\S+$) white spaces don’t allowed in the entire string.
+//   .{8, 20} represents at least 8 characters.
 
 
     public static void check(String inputs) {
