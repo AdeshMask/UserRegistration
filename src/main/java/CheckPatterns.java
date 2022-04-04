@@ -35,7 +35,7 @@ public class CheckPatterns {
     public static void passwords(String pass){
         Matcher matcher4 = password.matcher(pass);
         if (matcher4.matches())
-            System.out.print("");
+            System.out.print("Success...");
         else
             System.out.println("Invalid Type");
     }
