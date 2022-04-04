@@ -12,6 +12,7 @@ public class CheckPatternsTest extends TestCase {
     public void testMail() {
         CheckPatterns validate = new CheckPatterns();
         boolean result = validate.mail("abc.ades255@bl.co");
+
         Assert.assertEquals(true,result);
     }
 

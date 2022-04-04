@@ -8,11 +8,10 @@ public class Email {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter email address: ");
         String mail = scanner.next();
+        checkMails(mail);
+    }
+    static boolean checkMails(String mail) {
         Pattern pattern = Pattern.compile("^abc(['.''\\-''+']?)(['a-zA-Z0-9']*)@bl.co(['.']?)([a-z]*)$");
-        Matcher matcher = pattern.matcher(mail);
-        if (matcher.matches())
-            System.out.print("");
-        else
-            System.out.print("Invalid Type");
+        return pattern.matcher(mail).matches();
     }
 }
