@@ -18,9 +18,12 @@ public class MainClass {
         checkPatterns.check(lname);
         System.out.print("Enter email address:");
         String email = scanner.next();
-        checkPatterns.check(email);
+        checkPatterns.mail(email);
         System.out.print("Enter Mobile Number:");
         String mobile = scanner.next();
-        checkPatterns.check(mobile);
+        checkPatterns.mobile(mobile);
+        System.out.println("Enter 8-digit password");
+        String password = scanner.next();
+        checkPatterns.passwords(password);
     }
 }
