@@ -1,5 +1,13 @@
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+class CustomException extends Exception {
+    public CustomException(String message) {
+        // call the constructor of Exception class
+        super(message);
+    }
+}
 
 public class CheckPatterns {
 
@@ -16,17 +24,33 @@ public class CheckPatterns {
 //   .{8,} represents at least 8 characters.
 
 
-    public static boolean check(String inputs) {
-        return names.matcher(inputs).matches();
+    public static boolean check(String inputs) throws CustomException{
+        Matcher matcher = names.matcher(inputs);
+        if (matcher.matches())
+            return names.matcher(inputs).matches();
+        else
+            throw new CustomException(inputs + "Invalid input");
     }
-    public static boolean mail(String mail){
-        return email.matcher(mail).matches();
 
+    public static boolean mail(String mail)throws CustomException{
+        Matcher matcher = email.matcher(mail);
+        if (matcher.matches())
+            return email.matcher(mail).matches();
+        else
+            throw new CustomException(mail + "Invalid input");
     }
-    public static boolean mobile(String mobile){
+    public static boolean mobile(String mobile) throws CustomException {
+        Matcher matcher = phone.matcher(mobile);
+        if (matcher.matches())
         return phone.matcher(mobile).matches();
+        else
+            throw new CustomException(mobile + "Invalid input");
     }
-    public static boolean passwords(String pass){
+    public static boolean passwords(String pass) throws CustomException{
+        Matcher matcher = password.matcher(pass);
+        if (matcher.matches())
         return password.matcher(pass).matches();
+        else
+            throw new CustomException(pass + "Invalid input");
     }
 }
