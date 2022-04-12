@@ -9,6 +9,10 @@ class CustomException extends Exception {
     }
 }
 
+interface Check{
+    public boolean names(String names) throws CustomException;
+}
+
 public class CheckPatterns {
 
     static final Pattern names = Pattern.compile("^[A-Z][a-z]{3,}$");
@@ -24,33 +28,44 @@ public class CheckPatterns {
 //   .{8,} represents at least 8 characters.
 
 
-    public static boolean check(String inputs) throws CustomException{
-        Matcher matcher = names.matcher(inputs);
-        if (matcher.matches())
-            return names.matcher(inputs).matches();
-        else
-            throw new CustomException(inputs + "Invalid input");
+    public static boolean check(String inputs) throws CustomException {
+        Check check1 = (name) -> {
+            Matcher matcher = names.matcher(inputs);
+            if (matcher.matches())
+                return names.matcher(inputs).matches();
+            else
+                throw new CustomException(inputs + " Invalid input");
+        };
+        return false;
     }
-
     public static boolean mail(String mail)throws CustomException{
-        Matcher matcher = email.matcher(mail);
-        if (matcher.matches())
-            return email.matcher(mail).matches();
-        else
-            throw new CustomException(mail + "Invalid input");
+        Check check1 = (name) -> {
+            Matcher matcher = email.matcher(mail);
+            if (matcher.matches())
+                return email.matcher(mail).matches();
+            else
+                throw new CustomException(mail + " Invalid input");
+        };
+        return false;
     }
     public static boolean mobile(String mobile) throws CustomException {
-        Matcher matcher = phone.matcher(mobile);
-        if (matcher.matches())
-        return phone.matcher(mobile).matches();
-        else
-            throw new CustomException(mobile + "Invalid input");
+        Check check1 = (name) -> {
+            Matcher matcher = phone.matcher(mobile);
+            if (matcher.matches())
+                return phone.matcher(mobile).matches();
+            else
+                throw new CustomException(mobile + " Invalid input");
+        };
+        return false;
     }
-    public static boolean passwords(String pass) throws CustomException{
-        Matcher matcher = password.matcher(pass);
-        if (matcher.matches())
-        return password.matcher(pass).matches();
-        else
-            throw new CustomException(pass + "Invalid input");
+    public static boolean passwords(String pass) throws CustomException {
+        Check check1 = (name) -> {
+            Matcher matcher = password.matcher(pass);
+            if (matcher.matches())
+                return password.matcher(pass).matches();
+            else
+                throw new CustomException(pass + " Invalid input");
+        };
+        return false;
     }
 }
